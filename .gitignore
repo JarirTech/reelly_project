@@ -1,0 +1,5 @@
+.env
+Thumbs.db
+.vscode/, .idea/, .project, .settings, *.sublime-workspace
+node_modules/
+__pycache__/, venv/ (for virtual environments)
