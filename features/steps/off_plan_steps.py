@@ -2,7 +2,7 @@ import os
 from behave import given, when, then
 from app.application import Application
 
-
+#  Scenario: User can see titles and pictures on each product inside the off plan page
 @given('Open the main page')
 def open_main_page_step(context):
     context.app = Application(context.driver)
@@ -36,3 +36,24 @@ def verify_page_steps(context):
 @then('Verify each product on this page contains a title and picture visible.')
 def verify_product_title_img_steps(context):
     context.app.off_plan_page.verify_product_title_img()
+#Scenario: User can open the Contact us page
+@when ('Clicking on the Setting icon on the left of the page.')
+def clicking_settings_steps(context):
+    context.app.login_page.clicking_settings_icon()
+@when ('Click on Contact us tab.')
+def clicking_on_contact_us_steps(context):
+    context.app.setting_page.click_on_contact_us()
+
+@then ('Verify Contact us page opens.')
+def verify_contact_us_open_steps(context):
+    context.app.contact_us_page.verify_contact_us_open()
+
+@then('Verify that there are at least 4 social media icons.')
+def verify_social_media_steps(context):
+    context.app.contact_us_page.verify_social_media()
+@then ('Verify that "connect the company" button is available and clickable.')
+def connect_button_steps(context):
+    context.app.setting_page.connect_button()
+
+
+

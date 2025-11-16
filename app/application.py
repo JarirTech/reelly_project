@@ -1,9 +1,8 @@
 from pages.base_page import BasePage
 from pages.login_page import LoginPage
 from pages.off_plan_page import OffPlanPage
-
-
-
+from pages.setting_page import  SettingPage
+from pages.contact_us_page import ContactUsPage
 
 
 class Application:
@@ -11,6 +10,8 @@ class Application:
         self.base_page = BasePage(driver)
         self.login_page = LoginPage(driver)
         self.off_plan_page = OffPlanPage(driver)
+        self.setting_page =  SettingPage(driver)
+        self.contact_us_page = ContactUsPage(driver)
 
 
 

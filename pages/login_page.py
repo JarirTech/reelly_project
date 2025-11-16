@@ -9,6 +9,7 @@ class LoginPage(BasePage):
     PASSWORD_FIELD = (By.ID, 'field')
     LOGIN_BUTTON = (By.CSS_SELECTOR, 'a[wized="loginButton"]')
     LOGIN_PAGE_LOCATOR = (By.CSS_SELECTOR, "div.new-market-h1")
+    SETTING_BUTTON = (By.XPATH, '//div[@class="g-menu-text" and text()="Settings"]')
 
     def __init__(self, driver):
         super().__init__(driver)
@@ -37,3 +38,10 @@ class LoginPage(BasePage):
 
         # Wait until the login page's post-login locator is visible (or timeout)
         self.wait_for_element(self.LOGIN_PAGE_LOCATOR, timeout=timeout)
+
+
+    # clicking on settings icon
+    def clicking_settings_icon(self):
+        self.click(self.SETTING_BUTTON)
+
+
