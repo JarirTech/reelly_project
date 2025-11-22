@@ -55,5 +55,9 @@ def verify_social_media_steps(context):
 def connect_button_steps(context):
     context.app.setting_page.connect_button()
 
+#Scenario 3:
+@when ('Click on "Secondary" option at the left side menu')
+def clicking_on_secondary_button(context):
+    context.app.login_page.clicking_on_secondary_button()
 
 

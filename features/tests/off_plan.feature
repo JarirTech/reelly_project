@@ -23,3 +23,15 @@ Feature: testing reelly.io
     Then Verify Contact us page opens.
     And Verify that there are at least 4 social media icons.
     And Verify that "connect the company" button is available and clickable.
+
+  #Scenario 3:
+  Scenario: User can filter the secondary deals by "want to sell" option
+    Given Open the main page
+    When Log in to the login page
+    And Click on "Secondary" option at the left side menu
+    Then Verify the secondary  page opens.
+    And Click on filter icon.
+    And Click on "want to sell" aption.
+    And Click on "Apply filter" button.
+    And Verify "Listings" and "Agents" exist.
+

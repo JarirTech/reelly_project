@@ -3,6 +3,7 @@ from pages.login_page import LoginPage
 from pages.off_plan_page import OffPlanPage
 from pages.setting_page import  SettingPage
 from pages.contact_us_page import ContactUsPage
+from pages.secondary_page import SecondaryPage
 
 
 class Application:
@@ -12,6 +13,7 @@ class Application:
         self.off_plan_page = OffPlanPage(driver)
         self.setting_page =  SettingPage(driver)
         self.contact_us_page = ContactUsPage(driver)
+        self.secondary_page = SecondaryPage(driver)
 
 
 

@@ -10,6 +10,7 @@ class LoginPage(BasePage):
     LOGIN_BUTTON = (By.CSS_SELECTOR, 'a[wized="loginButton"]')
     LOGIN_PAGE_LOCATOR = (By.CSS_SELECTOR, "div.new-market-h1")
     SETTING_BUTTON = (By.XPATH, '//div[@class="g-menu-text" and text()="Settings"]')
+    SECONDARY_BUTTON = (By.XPATH, '//div[@class="g-menu-text" and text()="Secondary"]')
 
     def __init__(self, driver):
         super().__init__(driver)
@@ -45,3 +46,6 @@ class LoginPage(BasePage):
         self.click(self.SETTING_BUTTON)
 
 
+    # clicking on Secondary button
+    def clicking_on_secondary_button(self):
+        self.click(self.SECONDARY_BUTTON)
