@@ -14,7 +14,7 @@ class ContactUsPage(BasePage):
 
     def verify_contact_us_open(self):
         wait = WebDriverWait(self.driver, timeout=10).until(EC.url_to_be('https://soft.reelly.io/contact-us'))
-        assert self.driver.current_url ==  'https://soft.reelly.io/contact-us'
+        assert self.driver.current_url ==  'https://soft.reelly.io/contact-us', f"page not found"
 
     def verify_social_media(self):
         wait = WebDriverWait(self.driver, timeout=10)

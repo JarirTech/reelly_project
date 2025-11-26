@@ -59,5 +59,23 @@ def connect_button_steps(context):
 @when ('Click on "Secondary" option at the left side menu')
 def clicking_on_secondary_button(context):
     context.app.login_page.clicking_on_secondary_button()
+@then('Verify the secondary page opens.')
+def verify_secondary_page_opens_steps(context):
+    context.app.secondary_page.verify_secondary_page_opens()
+
+@then('Click on filter icon.')
+def click_filter_button_steps(context):
+    context.app.secondary_page.click_filter_button()
 
 
+@then ('Click on "want to sell" button.')
+def clicking_want_to_sell_steps(context):
+    context.app.secondary_page.clicking_want_to_sell_button()
+
+@then ('Click on "Apply filter" button.')
+def apply_filter_steps(context):
+    context.app.secondary_page.clicking_apply_filter()
+
+@then('Verify "Listings" and "Agents" exist.')
+def verify_want_to_sell_filter_steps(context):
+    context.app.secondary_page.verify_want_to_sell_filter()
