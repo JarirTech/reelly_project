@@ -79,3 +79,13 @@ def apply_filter_steps(context):
 @then('Verify "Listings" and "Agents" exist.')
 def verify_want_to_sell_filter_steps(context):
     context.app.secondary_page.verify_want_to_sell_filter()
+
+
+#scenario 4:
+@when('Go to the bottom of the page.')
+def scroll_down_steps(context):
+    context.app.secondary_page.scroll_down()
+
+@then('Go back to the top of the page.')
+def scroll_up_steps(context):
+    context.app.secondary_page.scroll_up()

@@ -2,6 +2,7 @@ import os
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.action_chains import ActionChains
 from pages.base_page import BasePage
 
 
@@ -42,3 +43,14 @@ class SecondaryPage(BasePage):
 
         assert listing_el.text.strip() == "Listings", "Listings button text is incorrect"
         assert agents_el.text.strip() == "Agents", "Agents button text is incorrect"
+
+    def scroll_down(self):
+        actions = ActionChains(self.driver)
+
+        # Scroll down (large amount)
+        actions.scroll_by_amount(0, 20000).perform()
+
+    def scroll_up(self):
+        # Scroll back up
+        actions = ActionChains(self.driver)
+        actions.scroll_by_amount(0, -20000).perform()
