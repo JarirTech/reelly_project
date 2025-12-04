@@ -14,7 +14,8 @@ class SecondaryPage(BasePage):
     APPLY_FILTER = (By.CSS_SELECTOR, 'a[wized="applyFilterButtonMLS"]')
     LISTING_BUTTON = (By.XPATH, '//div[@class="page-title listing" and text()= "Listings"]')
     AGENTS_BUTTON = (By.XPATH, '//div[@class="page-title listing" and text()= "Agents"]')
-
+    PAGINATION_ELEMENTS = (By.CSS_SELECTOR, 'div.page-count')
+    GRID_MENU = (By. CSS_SELECTOR, 'div.grid-menu-leaderboard')
     def __init__(self,driver):
         super().__init__(driver)
 
@@ -50,7 +51,21 @@ class SecondaryPage(BasePage):
         # Scroll down (large amount)
         actions.scroll_by_amount(0, 20000).perform()
 
+    def verify_pagination(self):
+        WebDriverWait(self.driver, 10).until(
+            EC.visibility_of_element_located(self.PAGINATION_ELEMENTS)
+        )
+        # Get ALL pagination elements
+        pagination_items = self.driver.find_elements(*self.PAGINATION_ELEMENTS)
+        # Assert that there are exactly 6 elements
+        assert len(pagination_items) == 6, f"Expected 6 pagination elements but found {len(pagination_items)}"
+
     def scroll_up(self):
         # Scroll back up
         actions = ActionChains(self.driver)
         actions.scroll_by_amount(0, -20000).perform()
+    def verify_top_page(self):
+        WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(self.GRID_MENU))
+        grid_menu = self.driver.find_elements(*self.GRID_MENU)
+        assert len(grid_menu)>0, f" there is no grid menu"
+

@@ -1,4 +1,6 @@
 import os
+from unittest.util import three_way_cmp
+
 from behave import given, when, then
 from app.application import Application
 
@@ -85,7 +87,13 @@ def verify_want_to_sell_filter_steps(context):
 @when('Go to the bottom of the page.')
 def scroll_down_steps(context):
     context.app.secondary_page.scroll_down()
+@then ('Verify the pagination section at the bottom of the page is visible.')
+def verify_pagination_steps(context):
+    context.app.secondary_page.verify_pagination()
 
 @then('Go back to the top of the page.')
 def scroll_up_steps(context):
     context.app.secondary_page.scroll_up()
+@then ('Verify the grid_menu is visible.')
+def grid_menu_steps(context):
+    context.app.secondary_page.verify_top_page()

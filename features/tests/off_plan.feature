@@ -40,6 +40,6 @@ Feature: testing reelly.io
     When Log in to the login page
     And  Click on "Secondary" option at the left side menu
     And Go to the bottom of the page.
-#    Then Verify the pagination section at the bottom of the page is visible.
-#    And  Go back to the top of the page.
-#    And Verify the grid_menu is vesible.
+    Then Verify the pagination section at the bottom of the page is visible.
+    And  Go back to the top of the page.
+    And Verify the grid_menu is visible.
