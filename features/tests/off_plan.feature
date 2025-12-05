@@ -43,3 +43,14 @@ Feature: testing reelly.io
     Then Verify the pagination section at the bottom of the page is visible.
     And  Go back to the top of the page.
     And Verify the grid_menu is visible.
+
+#-----------------------------------------------------------------------------------------------------------------------
+  #Scenario 5: change password page
+  Scenario: User can open password page.
+    Given open the main page
+    When Log in to the login page
+    And Click on the setting option.
+    And Click on change password option.
+    Then  Verify the password page opens.
+    And  Add some test password into the input fields
+    And Verify the "change password" button is available.
