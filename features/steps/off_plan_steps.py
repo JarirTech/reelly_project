@@ -81,7 +81,7 @@ def apply_filter_steps(context):
 @then('Verify "Listings" and "Agents" exist.')
 def verify_want_to_sell_filter_steps(context):
     context.app.secondary_page.verify_want_to_sell_filter()
-
+#------------------------------------------------------------------------------------------------
 
 #scenario 4:
 @when('Go to the bottom of the page.')
@@ -97,3 +97,23 @@ def scroll_up_steps(context):
 @then ('Verify the grid_menu is visible.')
 def grid_menu_steps(context):
     context.app.secondary_page.verify_top_page()
+
+
+#-------------------------------------------------------------------------------------------------------------
+#scenario 5:
+@when ('Click on change password button.')
+def clicking_change_password_steps(context):
+    context.app.setting_page.clicking_change_password()
+
+@then('Verify the password page opens.')
+def verify_password_page(context):
+    context.app.change_password_page.verify_password_page_opens()
+
+@then('Add some test password into the input fields.')
+
+def changing_password_steps(context):
+    context.app.change_password_page.test_password_field()
+@then('Verify the "change password" button is available.')
+def verify_change_password_button_steps(context):
+    context.app.change_password_page.verify_change_password_button()
+

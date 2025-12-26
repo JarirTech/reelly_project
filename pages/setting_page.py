@@ -13,6 +13,7 @@ class SettingPage(BasePage):
 
     CONTACT_US_BUTTON=(By.XPATH, '//div[@class="setting-text" and text()="Contact us"]')
     CONNECT_BUTTON = (By.XPATH, '//div[@class="get-free-period menu" and text()="Connect the company"]')
+    CHANGE_PASSWORD = (By.XPATH, '//div[@class="setting-text" and text()="Change password"]')
 
 
     def __init__(self, driver):
@@ -26,3 +27,5 @@ class SettingPage(BasePage):
         element = wait.until(EC.element_to_be_clickable(self.CONNECT_BUTTON))
         assert element, f' the connect button not clickable'
 
+    def clicking_change_password(self):
+        self.click(self.CHANGE_PASSWORD)

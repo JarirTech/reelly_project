@@ -47,10 +47,10 @@ Feature: testing reelly.io
 #-----------------------------------------------------------------------------------------------------------------------
   #Scenario 5: change password page
   Scenario: User can open password page.
-    Given open the main page
+    Given Open the main page
     When Log in to the login page
-    And Click on the setting option.
-    And Click on change password option.
-    Then  Verify the password page opens.
-    And  Add some test password into the input fields
+    And Clicking on the Setting icon on the left of the page.
+    And Click on change password button.
+    Then Verify the password page opens.
+    And  Add some test password into the input fields.
     And Verify the "change password" button is available.
